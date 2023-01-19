@@ -1,0 +1,25 @@
+
+.form{
+    min-height: 400px;
+    width: 400px;
+    margin: 100px auto;
+    border: 2px solid royalblue;
+    box-shadow:2px 2px 2px 10px black;
+    padding: 50px;
+    background:transparent;
+}
+.btn{
+    text-align: center;
+    background-color: yellowgreen !important;
+    color: black;
+}
+input{
+    background: transparent !important;
+}
+::placeholder{
+    color:darkslateblue !important;
+}
+input:hover{
+    border: 1px solid red;
+    /* transition: all ease 1s; */
+}
