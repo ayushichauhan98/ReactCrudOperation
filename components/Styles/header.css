@@ -1,0 +1,12 @@
+.menu{
+    background:black;
+    text-align: center;
+}
+.menu a{
+    color: white;
+    margin-left: 60px;
+}
+.menu a:hover{
+    color: red;
+    margin-left: 60px;
+}

@@ -1,33 +1,34 @@
-import React ,{Component} from 'react';
-export default class Header extends Component{
-    render =()=>{
-        return(
-     
-             <React.Fragment>
-          <nav className="navbar navbar-expand-lg bg-success">
-  <div className="container-fluid">
-    <a className="navbar-brand text-dark" href="#">Fashion</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active text-dark" aria-current="page" href="#home">Home</a>
-        </li>
-        
-        <li className="nav-item">
-          <a className="nav-link text-dark" href="#showuser">Show_User</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-dark" href="#register">Register</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-        </React.Fragment>
+import React, { Component } from 'react'
+import "./styles/header.css"
+export default class Header extends Component {
 
+    render = () => {
+        return (
+            <React.Fragment>
+                <div className="mynav">
+                    <div className="row bg-dark">
+                        <div className="col-sm-3 text-danger fw-bold text-center pt-2 fs-3">Hello i m Prem</div>
+                        <div className="col-sm-6">
+                            <nav className="navbar navbar-expand-lg bg-body-tertiary menu text-center">
+                                <div className="container-fluid">
+                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span className="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div className="navbar-nav">
+                                            <a className="nav-link" aria-current="page" href="#home">Home</a>
+                                            <a className="nav-link" href="#register">Register</a>
+                                            <a className="nav-link" href="#showdata">ShowData</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div className="col-sm-3 text-light fw-bold text-center pt-2 fs-4">Crud Operation</div>
+                    </div>
+                </div>
+            </React.Fragment>
         )
     }
 }

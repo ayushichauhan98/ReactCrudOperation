@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './styles/register.css'
 import { redirect, route } from '../Router'
-import config from "../config/config.json"
-export default class Edituser extends Component {
+export default class Createuser extends Component {
+    //react lifeCycle  
+    //mounting state first lifecycle
     constructor(props) {
         super(props);
 
@@ -25,7 +26,7 @@ export default class Edituser extends Component {
                         <div className="col-sm-4"></div>
                         <div className="col-sm-4 py-5">
                             <div id="container">
-                                <div className="head text-center fs-2 fw-bold text-light ">Edit Data</div>
+                                <div className="head text-center fs-2 fw-bold text-light ">Create Data</div>
                                 <div id="inner" className='py-2 px-4'>
                                     <form className="my-4">
                                         <div className="input-group">
@@ -44,7 +45,7 @@ export default class Edituser extends Component {
                                             <div className="input-group-text"><b>Password</b></div>
                                             <input type="password" value={this.state.password} onChange={(event) => this.setState({ password: event.target.value })} placeholder='Enter Your password...' className="form-control" />
                                         </div> <br />
-                                        <input type="button" value='Update' onClick={this.updateData} className="btn btn-success form-control fs-5 fw-bold" />
+                                        <input type="button" value='Save' onClick={this.saveData} className="btn btn-success form-control fs-5 fw-bold" />
                                     </form>
                                 </div>
                             </div>
@@ -55,36 +56,12 @@ export default class Edituser extends Component {
             </React.Fragment>
         )
     }
-    componentDidMount() {
-        //Get data from API
-        let id = this.props.userid
-        const url = 'http://localhost:5000/users/' + id;
-        // console.log(this.props)
-        let promise = fetch(url)
-        promise.then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-        }).then((data) => {
-            this.setState({
-                name: data.name,
-                email: data.email,
-                mobile: data.mobile,
-                password: data.password,
-            })
-        }).catch((error) => {
-            console.log(error)
-        })
-    }
-
-    //update data
-    updateData = () => {
+    // https://json-server.seeksolution.in/users/
+    saveData = () => {
         // console.log(this.state)
-        let id = this.props.userid
-
-        const url = config.LOCAL_URL + id;
+        const url = 'http://localhost:5000/users';
         // const site_url = "https://myhisab.seeksolution.in/api/getusers.php/";
-        let updateUser = {
+        let newobject = {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
@@ -94,8 +71,8 @@ export default class Edituser extends Component {
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "PUT",
-            body: JSON.stringify(updateUser)
+            method: "POST",
+            body: JSON.stringify(newobject)
         })
 
         promise.then((response) => {
@@ -104,13 +81,12 @@ export default class Edituser extends Component {
                     name: "",
                     email: "",
                     password: "",
-                    mobile: "",
                     users: [],
-                    msg: <span className='alert alert-success text-center'>Update Successfully</span>
+                    msg: <span className='alert alert-success text-center'>User Create Successfully</span>
 
 
                 })
-                setTimeout(() => {
+                let id1 = setTimeout(() => {
                     this.setState({
                         msg: "",
                     })
@@ -123,6 +99,7 @@ export default class Edituser extends Component {
         }).then((data) => {
             console.log(data)
         }).catch((error) => {
+            // console.log(error)
             this.setState({
                 name: "",
                 email: "",

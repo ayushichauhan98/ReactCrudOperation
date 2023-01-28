@@ -1,0 +1,25 @@
+.register{
+    min-height: 500px;
+    width: 100%;
+    background:linear-gradient(#774eb5,#00aed6);
+}
+#container{
+    min-height: 400px;
+    width: 100%;
+    border: 0.3px solid black;
+    border-radius: 8px;
+    box-shadow: 1px 1px .5px rgb(0, 0, 0);
+}
+.head{
+    height:60px;
+    width : 100%;
+    background: #222255;
+}
+#inner{
+    min-height: 340px;
+    background: #272a68;
+    
+}
+.input-group{
+    height: 50px;
+}

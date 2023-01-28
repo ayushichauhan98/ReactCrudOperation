@@ -1,18 +1,22 @@
 .success{
-    color:yellowgreen;
-    background-color:violet ;
-    padding: 5px;
-    height: auto;
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 2px;
+    color:green;
+    background: lightgreen;
+    padding:5px;
+    height:auto;
+    width:100%;
+    font-size: 18px;
+    text-align: center;
+    border:2px solid black;
+    border-radius: 5px;
 }
 .error{
-    color:tomato ;
-    background-color:springgreen ;
-    padding: 5px;
-    height: auto;
-    width: 100%;
-    border: 2px solid grey;
-    border-radius: 2px;
+    color:red;
+    font-size: 18px;
+    background: lightcoral;
+    text-align: center;
+    padding:5px;
+    height:auto;
+    width:100%;
+    border:2px solid black;
+    border-radius: 5px;
 }

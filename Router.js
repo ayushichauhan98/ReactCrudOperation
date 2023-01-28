@@ -1,28 +1,25 @@
+const Router = () => {
+  window.onhashchange = function () {
+    var hash = window.location.hash.split("#")[1];
+    window.localStorage.setItem("hash", hash);
+    window.location.reload(true);
 
-const Router = () =>  {
-    window.onhashchange = function(){
+    // console.log(window.location.href);
+  };
 
-        var hash = window.location.hash.split("#")[1];
-        window.localStorage.setItem('hash', hash );     
-        window.location.reload(true);
+  if (window.location.href.indexOf("#") > -1) {
+    window.localStorage.setItem("logs", "Router Reloaded");
+    // window.location.assign(window.location.hash.replace("#", ""));
+  }
 
-       // console.log(window.location.href);
-    }
+  return window.localStorage.getItem("hash");
+};
 
-    if( window.location.href.indexOf("#") > -1 ){
-        
-        window.localStorage.setItem('logs','Router Reloaded');     
-       // window.location.assign( window.location.hash.replace("#",""))
-
-    }
-   
-    return window.localStorage.getItem('hash');
-}
-// function for redirection
-const redirect = (hashurl)=>{
-    window.location.hash = hashurl;
-    // window.location.reload()
-}
+//function for redirect
+const redirect = (hashurl) => {
+  window.location.hash = hashurl;
+  // window.location.reload();
+};
 
 let route = Router();
-export {route,redirect};
+export { route, redirect };

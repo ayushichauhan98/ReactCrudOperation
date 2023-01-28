@@ -1,0 +1,12 @@
+thead{
+    background: black !important;
+    color: crimson;
+}
+tbody{
+    background: #272a68;
+    color: white;
+}
+.show{
+    background:linear-gradient(#774eb5,#00aed6);
+
+}
